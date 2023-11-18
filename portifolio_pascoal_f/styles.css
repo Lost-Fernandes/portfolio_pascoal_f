@@ -1,0 +1,274 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+    
+}
+
+:root{
+    --color-white: #ff0;
+    --color-pink: #fff; 
+
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 17px;
+
+}
+
+#person {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    
+    background: black;
+
+}
+
+.person-content {
+    height:  100%;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    background: black;
+}
+
+.person-content div h1 {
+    color:var(--color-white);
+    
+    padding: 0px 4px;
+    position: relative;
+    width: fit-content;
+
+    font-size: 4.5rem;
+    line-height: 6rem;
+
+    animation: witten_text .5s ease forwards;
+}
+
+.person-content div h1:nth-child(1){
+    animation-delay: 1s;
+}
+.person-content div h1:nth-child(2){
+    animation-delay: 2s;
+}
+
+.person-content div h1:nth-child(3){
+    animation: wirtten_text_name .5s ease;
+    animation-delay: 3s;
+}
+
+.person-content div h1 span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+ 
+    width: 0px;
+    height: 02px;
+    background: #ffff00
+    ;f;
+
+    animation: witten_text_box 1s ease;
+    animation-delay: .5s;
+    
+}
+
+.person-content div h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+
+.person-content div h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+
+.person-content div h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+.person-name {
+    margin-top: 11rem;
+}
+
+.stacks-content {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+.stacks-content h3 {
+    color: var(--color-pink);
+    font-size: 1.15rem;
+
+    margin-left: 30px;
+}
+
+
+.stacks {
+    display: flex;
+    align-items: center;
+
+    flex-direction: row;
+
+}
+
+.stacks ul li {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    margin: 20px;
+    padding: 20px;
+
+    list-style: none;
+
+}
+
+.stacks ul li img {
+    width: 60px;
+    height: auto;
+
+    transition: transform .3s ease;
+
+}
+
+.stacks ul li div img:hover{
+   transform: scale(1.2);
+   cursor: pointer; 
+}
+
+.stacks ul li div:hover::after{
+    content: attr(data);
+    position: absolute;
+    top: 90px;
+    left: 20px;
+
+    width: 30px;
+    height: 20px;
+
+    color: #ff0;
+}
+
+.person-background {
+    height: 100vh;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    flex-direction: column;
+
+    background-image: url(./img/photo-1605379399642-870262d3d051.avif);
+    background-size: cover;
+    background-position: top center;
+
+    z-index: 1;
+}
+
+
+.person-background ::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    opacity: .7;
+    z-index: -1;
+
+    background:
+    linear-gradient(90deg, trasparent 30%, var(--color-black)),
+    linear-gradient(180deg, trasparent 30%, var(--color-black)),
+    linear-gradient(0deg, trasparent 65%, var(--color-black));
+}
+
+.wrapper-profile-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+    margin: 20px 15px;
+
+    border-radius: 50%; 
+
+    background: 
+    radial-gradient(rgba(0,0,0.15)60%, transparent 0),
+    radial-gradient(#000 68%, transparent 0),
+    linear-gradient(to top right, #ffff 0%, #cccc 100%);
+
+
+}
+
+.wrapper-profile-photo img {
+    border-radius: 50%;
+    
+    width: 300px;
+    height: 300px;
+}
+
+
+.links a img {
+    width: 30px;
+    height: 30px;
+  
+    margin: 10px;
+    z-index: 100;
+    display: inline-block;
+
+    filter: brightness(.8);
+    transition: all .3s ease;
+
+}
+
+.links a img:hover {
+    transform: scale(1.15);
+    filter: brightness(1);
+} 
+
+/*final da primeira pagina*/
+
+
+@keyframes witten_text {
+    100%{
+        color: var(--color-white);
+    }
+}
+    
+
+@keyframes witten_text_name {
+    100%{
+        color:var(--color-pink);
+    }
+}
+
+@keyframes witten_text_box {
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+
+
